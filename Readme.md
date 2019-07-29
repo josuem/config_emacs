@@ -1,5 +1,3 @@
-#+STARTUP: showall hidestars
-
 # Configuración actual de Emacs en windows 10
 Configuración actual de la carpeta .emacs. Está carpeta se encuentra disponible en C:\Users\USUARIO\AppData\Roaming\.emacs.d
 Esta contiene:
