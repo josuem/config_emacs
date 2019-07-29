@@ -1,0 +1,44 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-refile-last-stored"
+ (filename . "~/Dropbox/orgfiles/admissions.org")
+ (front-context-string . "** Need to evalu")
+ (rear-context-string . "hi, Xing Tao]]\n\n")
+ (position . 10749))
+("org-capture-last-stored"
+ (filename . "~/Sync/orgfiles/i.org")
+ (front-context-string . "** TODO [[mu4e:m")
+ (rear-context-string . "o Do and Notes \n")
+ (position . 949))
+("elfeed-unread"
+ (location . "@6-months-ago +unread")
+ (tags "unread")
+ (handler . elfeed-search-bookmark-handler))
+("elfeed-starred"
+ (location . "@1-day-ago +star")
+ (tags "star")
+ (handler . elfeed-search-bookmark-handler))
+("elfeed-education"
+ (location . "@6-months-ago +education")
+ (tags
+  #("education" 0 9
+    (keymap
+     (keymap
+      (follow-link . mouse-face)
+      (mouse-3 . org-find-file-at-mouse)
+      (mouse-2 . org-open-at-mouse))
+     mouse-face highlight face
+     (org-tag org-level-2)
+     fontified nil)))
+ (handler . elfeed-search-bookmark-handler))
+("elfeed-all"
+ (location . "@6-months-ago")
+ (tags)
+ (handler . elfeed-search-bookmark-handler))
+("elfeed-daily"
+ (location . "@1-day-ago")
+ (tags)
+ (handler . elfeed-search-bookmark-handler))
+)

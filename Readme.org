@@ -1,0 +1,4 @@
+#+STARTUP: showall hidestars
+
+For a list of all posts and videos check out http://cestlaz.github.io/stories/emacs
+
