@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: template_md
+# key: <md
+# --
+---
+title:$1
+autor: Josué D. Meneses Díaz
+bibliography: referencias.bib
+toc: true # Añadir índice
+lof: true # Añadir lista de figuras
+lot: true # Añadir lista de tablas
+---
+
+# $2
+$0

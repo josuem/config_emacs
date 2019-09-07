@@ -58,6 +58,18 @@
 ;; which key:1 ends here
 
 ;; [[file:~/.emacs.d/myinit.org::*Org%20mode][Org mode:1]]
+(require 'org-ref)
+(require 'org-ref-pdf)
+(require 'org-ref-url-utils)
+;;(org-babel-load-file "org-ref.org")
+
+(setq org-ref-default-citation-link "autocite")
+;;(setq org-latex-pdf-process (list
+;;"latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+
+(setq org-latex-pdf-process
+      '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+
 (use-package org 
   :ensure t
   :pin org)
@@ -79,7 +91,7 @@
 
 (setq org-file-apps
       (append '(
-                ("\\.pdf\\'" . "evince %s")
+                ("\\.pdf\\'" . "okular %s")
                 ("\\.x?html?\\'" . "/usr/bin/chromium-browser %s")
                 ) org-file-apps ))
 
@@ -119,6 +131,25 @@
 (define-key org-mode-map (kbd "C-c >") (lambda () (interactive (org-time-stamp-inactive))))
 
 (use-package htmlize :ensure t)
+
+;; Cambia el tamaño de las previstas de latex en orgmode
+(plist-put org-format-latex-options :scale 1.5)
+
+;; Configuración de Beamer
+(eval-after-load "ox-latex"
+
+  ;; update the list of LaTeX classes and associated header (encoding, etc.)
+  ;; and structure
+  '(add-to-list 'org-latex-classes
+                `("beamer"
+                  ,(concat "\\documentclass[presentation]{beamer}\n"
+                           "[DEFAULT-PACKAGES]"
+                           "[PACKAGES]"
+                           "[EXTRA]\n")
+                  ("\\section{%s}" . "\\section*{%s}")
+                  ("\\subsection{%s}" . "\\subsection*{%s}")
+                  ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+(setq org-latex-listings t)
 ;; Org mode:1 ends here
 
 ;; [[file:~/.emacs.d/myinit.org::*Ace%20windows%20for%20easy%20window%20switching][Ace windows for easy window switching:1]]
@@ -505,8 +536,8 @@
 (define-key z-map (kbd "*") 'calc)
 
 
-  (setq user-full-name "Mike Zamansky"
-                          user-mail-address "mz631@hunter.cuny.edu")
+  (setq user-full-name "Josué D. Meneses Díaz"
+        user-mail-address "josue.meneses@usach.cl")
   ;;--------------------------------------------------------------------------
 
 

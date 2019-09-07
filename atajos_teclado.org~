@@ -1,0 +1,40 @@
+#+TITLE: atajos_teclado
+#+DATE: <2019-07-27 sáb.>
+#+AUTHOR: Josué Meneses Díaz
+#+EMAIL: josue.meneses@usach.cl
+
+* Configuración
+#+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+OPTIONS: timestamp:t title:t toc:t todo:t |:t
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t broken-links:nil c:nil creator:nil
+#+OPTIONS: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+
+#+LANGUAGE: es
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.9)
+
+* Atajos generales
+
+| Combinación de teclas | nombre                         | comentario                                               |
+|-----------------------+--------------------------------+----------------------------------------------------------|
+| c-x  c-+ luego + ó -  | aumento/disminución de font    | cambia el tamaño actual de los font utilizados en emacs  |
+| visual-line-mode      | fill the visual mode on screen | llena el texto de la pantalla actual                     |
+| toggle-frame-screen   | pantalla completa              | cambia a pantalla completa, funciona también f11         |
+| C-x b                 | buffer                         | muestra la lista de archivos abiertos en el buffer       |
+| C-c '                 | Editar script                  | Edita en otra pantalla un script                         |
+| C-x k                 | kill buffer                    | Cierra el actual buffer                                  |
+| C-x C-f               | Directorio .emacs.d            | Lista los archivos de la carpeta contenedora de .emacs.d |
+|                       |                                |                                                          |
+
+* Markdown mode
+
+| Combinación de teclas | nombre       | comentario                                  |
+| C-c C-l               | inserta link | inserta un link en el texto desde el buffer |
+|                       |              |                                             |
+
+* utilización de Pandoc
+| comando                                               | Comentario                                                     |
+| pandoc --filter pandoc-citeproc main.md -o output.pdf | Crea un pdf desde un archivo .md con referencias desde un .bib |
+|                                                       |                                                                |

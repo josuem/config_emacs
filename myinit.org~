@@ -26,14 +26,13 @@
   ;; Configuración windows
   (setq helm-bibtex-bibliography '("./referencias.bib"
                                    "D\:\\Universidad\\ulab\\apuntes\\atomización\\referencias.bib"
+                                   ;;D\://Universidad//ulab//apuntes//atomización//referencias.bib
+                                   ;;C\:\\Users\\Josue\\Zotero\\storage\\4M8UCDX2\\Lang
                                    ))
 
-  ;; Configuración de Helm
-  (setq bibtex-completion-format-citation-functions
-        '((org-mode      . bibtex-completion-format-citation-org-link-to-PDF)
-          (latex-mode    . bibtex-completion-format-citation-cite)
-          (markdown-mode . bibtex-completion-format-citation-pandoc-citeproc)
-          (default       . bibtex-completion-format-citation-default)))
+  ;;(setq helm-bibtex-bibliography '("~/texmf/bibtex/bib/la.bib"
+  ;;"~/texmf/bibtex/bib/njhigham.bib"
+  ;;))
 #+END_SRC
 * interface tweaks
 #+BEGIN_SRC emacs-lisp
@@ -75,17 +74,6 @@
 
   Org bullets makes things look pretty
   #+BEGIN_SRC emacs-lisp
-    (require 'org-ref)
-    (require 'org-ref-pdf)
-    (require 'org-ref-url-utils)
-    ;;(org-babel-load-file "org-ref.org")
-
-    (setq org-ref-default-citation-link "autocite")
-    ;;(setq org-latex-pdf-process (list
-    ;;"latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
-
-    (setq org-latex-pdf-process
-          '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
 
     (use-package org 
       :ensure t
@@ -108,7 +96,7 @@
 
     (setq org-file-apps
           (append '(
-                    ("\\.pdf\\'" . "okular %s")
+                    ("\\.pdf\\'" . "evince %s")
                     ("\\.x?html?\\'" . "/usr/bin/chromium-browser %s")
                     ) org-file-apps ))
 
@@ -148,26 +136,6 @@
     (define-key org-mode-map (kbd "C-c >") (lambda () (interactive (org-time-stamp-inactive))))
 
     (use-package htmlize :ensure t)
-
-    ;; Cambia el tamaño de las previstas de latex en orgmode
-    (plist-put org-format-latex-options :scale 1.5)
-
-    ;; Configuración de Beamer
-    (eval-after-load "ox-latex"
-
-      ;; update the list of LaTeX classes and associated header (encoding, etc.)
-      ;; and structure
-      '(add-to-list 'org-latex-classes
-                    `("beamer"
-                      ,(concat "\\documentclass[presentation]{beamer}\n"
-                               "[DEFAULT-PACKAGES]"
-                               "[PACKAGES]"
-                               "[EXTRA]\n")
-                      ("\\section{%s}" . "\\section*{%s}")
-                      ("\\subsection{%s}" . "\\subsection*{%s}")
-                      ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
-    (setq org-latex-listings t)
-
   #+END_SRC
 
   #+RESULTS:
@@ -670,8 +638,8 @@ END_SRC
 (define-key z-map (kbd "*") 'calc)
 
 
-  (setq user-full-name "Josué D. Meneses Díaz"
-        user-mail-address "josue.meneses@usach.cl")
+  (setq user-full-name "Mike Zamansky"
+                          user-mail-address "mz631@hunter.cuny.edu")
   ;;--------------------------------------------------------------------------
 
 

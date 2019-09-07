@@ -2,7 +2,6 @@
 #+DATE: <2019-07-27 sáb.>
 #+AUTHOR: Josué Meneses Díaz
 #+EMAIL: josue.meneses@usach.cl
-
 * Configuración
 #+OPTIONS: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+OPTIONS: timestamp:t title:t toc:t todo:t |:t
@@ -14,6 +13,18 @@
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 26.1 (Org mode 9.1.9)
+* Bash
+| Combinación de teclas                  | nombre                        | comentario                                                                    |
+|----------------------------------------+-------------------------------+-------------------------------------------------------------------------------|
+| systemctl enable dhcpcd@enp0s3         | habilitar red                 | habilita la conexión de red del computador                                    |
+| systemctl enable dhcpcd@wlp2s0.service | habilita el wifi              | habilita la conexión de wifi del computador                                   |
+| systemd-analize plot > plot.svg        | plot de inicio                | Crea un archivo svg con los tiempos de inicio del sistema                     |
+| yay -Rns                               | Remover programa              | Remueve completamente un programa de arch                                     |
+| du -h -d 2 /DIRECTORIO                 | tamaño de uso de las carpetas | Lista el tamaño en -h (human) en los niveles -d del DIRECTORIO                |
+| df -h                                  | Tamaño de la carpeta          | Lista el tamaño de las carpetas de / en unidades humandas -h                  |
+| makepkg -si                            | Instala packete PKGBUILD      | Instala paquete con las instrucciones para YAY (-s: sincroniza y -i installa) |
+|                                        |                               |                                                                               |
+
 
 * Atajos generales
 
@@ -26,8 +37,18 @@
 | C-c '                 | Editar script                  | Edita en otra pantalla un script                         |
 | C-x k                 | kill buffer                    | Cierra el actual buffer                                  |
 | C-x C-f               | Directorio .emacs.d            | Lista los archivos de la carpeta contenedora de .emacs.d |
+| M+!                   | Comando shell                  | Permite ejecutar un comando shell en el buffer           |
+| C-h v user-init-file. | directorio .emacs.d            | muestra el directorio de la configuración de emacs       |
 |                       |                                |                                                          |
 
+* Atajos org-mode
+
+| Combinación de teclas | nombre               | comentario                                                    |
+|-----------------------+----------------------+---------------------------------------------------------------|
+| C-c C-x C-v           | Ver imagenes         | muestra las imágenes insertadas en el texto, en modo org-mode |
+| C-c C-x C-l           | Ver ecuaciones latex | realiza un render de las ecuaciones tipo latex en el texto    |
+| C-c C-c               | Inserta tag          | Inserta un tag en la sección donde se encuentra el cursor.    |
+|                       |                      |                                                               |
 * Markdown mode
 
 | Combinación de teclas | nombre       | comentario                                  |
@@ -38,3 +59,25 @@
 | comando                                               | Comentario                                                     |
 | pandoc --filter pandoc-citeproc main.md -o output.pdf | Crea un pdf desde un archivo .md con referencias desde un .bib |
 |                                                       |                                                                |
+* Comandos de Git y Github
+
+** Comandos locales
+| Comando                                     | Comentario                                                                              |
+| git init                                    | Crea la carpeta .git que realiza la manteción del proyecto                              |
+| git status                                  | Muestra los archivos en los cuales se está trabajando en el proyecto                    |
+| git add                                     | Agrega un archivo para realizar su seguimiento. Con . o * agrega todos los archivos     |
+| git commit                                  | Permite crear un mensaje de comentario para la versión respaldada                       |
+| git commit -m "MENSAJE"                     | Agrega el comentario directamente, sin abrir el editor                                  |
+| git config --global user.email "EMAIL"      | Configura el email de GitHub en el cliente local                                        |
+| git config --global user.name "USUARIO"     | Configura el usuario de GitHub en el cliente local                                      |
+| git log                                     | Muestra el log de los commit creados                                                    |
+| git checkout -- "NOMBRE_ARCHIVO"            | Reestablece el archivo creado a su estatus guardado anteriormente                       |
+| git diff "NOMBRE_ARCHIVO"                   | Muestra los cambios realizados del archivo                                              |
+| git branch                                  | Muestra los hilos creados hasta el momento                                              |
+| git branch "NOMBRE"                         | Crea un nuevo hilo para la modificación de los archivos                                 |
+| git checkout "NOMBRE_BRANCH"                | Cambia el hilo de edición actual (entre branch)                                         |
+| git commit --amend                          | Edita el último commit guardado, útil cuando falta agregar un archivo o cambios mínimos |
+|                                             |                                                                                         |
+| git config --global core.editor             | Cambia el editor utilizado por git a notepad++                                          |
+| "'C:/Program Files/Notepad++/notepad++.exe' |                                                                                         |
+| -multiInst -notabbar -nosession -noPlugin"  |                                                                                         |
